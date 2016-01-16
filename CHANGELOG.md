@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.0.1] - 2016-01-16
+### Fixed
+- Fix wrong 'typings' path, can consume module from typescript now.
+
 ## [1.0.0] - 2016-01-16
 ### Changed
 - Updated README

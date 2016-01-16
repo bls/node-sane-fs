@@ -1,12 +1,9 @@
 {
   "name": "@sane/fs",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Promisified 'fs' API, for typescript.",
   "main": "dist/index.js",
-  "typescript": {
-    "definition": "dist/index.d.ts"
-  },
-  "typings": "dist/lib/index.d.ts",
+  "typings": "dist/index.d.ts",
   "scripts": {
     "prepublish": "tslint src/*.ts && tsc",
     "test": "mocha dist/test.js"
