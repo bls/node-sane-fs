@@ -11,6 +11,11 @@ Install
 npm install @sane/fs --save
 ```
 
+Api
+---
+
+See [src/index.ts](src/index.ts) for a list of promisifed methods.
+
 Example
 -------
 
