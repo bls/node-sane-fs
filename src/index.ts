@@ -4,7 +4,6 @@ import promisify = require('es6-promisify');
 
 export type ModeT = string | number;
 export type TimeT = number | Date;
-export type Stats = fs.Stats;
 
 export let accessAsync: (path: string, mode?: ModeT) => Promise<void> = promisify(fs.access);
 export let appendFileAsync: (filename: string, data: any,
@@ -14,14 +13,14 @@ export let chownAsync: (path: string, uid: number, gid: number) => Promise<void>
 export let closeAsync: (fd: number) => Promise<void> = promisify(fs.close);
 export let fchmodAsync: (fd: number, mode: ModeT) => Promise<void> = promisify(fs.fchmod);
 export let fchownAsync: (fd: number, uid: number, gid: number) => Promise<void> = promisify(fs.fchown);
-export let fstatAsync: (fd: number) => Promise<Stats> = promisify(fs.fstat);
+export let fstatAsync: (fd: number) => Promise<fs.Stats> = promisify(fs.fstat);
 export let fsyncAsync: (fd: number) => Promise<void> = promisify(fs.fsync);
 export let ftruncateAsync: (fd: number, len?: number) => Promise<void> = promisify(fs.ftruncate);
 export let futimesAsync: (fd: number, atime: TimeT, mtime: TimeT) => Promise<void> = promisify(fs.futimes);
 export let lchmodAsync: (path: string, mode: ModeT) => Promise<void> = promisify(fs.lchmod);
 export let lchownAsync: (path: string, uid: number, gid: number) => Promise<void> = promisify(fs.lchown);
 export let linkAsync: (srcpath: string, dstpath: string) => Promise<void> = promisify(fs.link);
-export let lstatAsync: (path: string) => Promise<Stats> = promisify(fs.lstat);
+export let lstatAsync: (path: string) => Promise<fs.Stats> = promisify(fs.lstat);
 export let mkdirAsync: (path: string) => Promise<void> = promisify(fs.mkdir);
 export let openAsync: (path: string, flags: string, mode?: ModeT) => Promise<number> = promisify(fs.open);
 export let readAsync: (fd: number, buffer: Buffer, offset: number, length: number, position: number) => Promise<number> = promisify(fs.read);
@@ -30,7 +29,7 @@ export let readlinkAsync: (path: string) => Promise<string> = promisify(fs.readl
 export let realpathAsync: (path: string, cache?: { [path: string]: string }) => Promise<string> = promisify(fs.realpath);
 export let renameAsync: (oldPath: string, newPath: string) => Promise<void> = promisify(fs.rename);
 export let rmdirAsync: (path: string) => Promise<void> = promisify(fs.rmdir);
-export let statAsync: (path: string) => Promise<Stats> = promisify(fs.stat);
+export let statAsync: (path: string) => Promise<fs.Stats> = promisify(fs.stat);
 export let symlinkAsync: (srcpath: string, dstpath: string, type?: string) => Promise<void> = promisify(fs.symlink);
 export let truncateAsync: (path: string, len?: number) => Promise<void> = promisify(fs.truncate);
 export let unlinkAsync: (path: string) => Promise<void> = promisify(fs.unlink);
