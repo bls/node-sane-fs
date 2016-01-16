@@ -34,8 +34,11 @@ export let statAsync: (path: string) => Promise<Stats> = promisify(fs.stat);
 export let symlinkAsync: (srcpath: string, dstpath: string, type?: string) => Promise<void> = promisify(fs.symlink);
 export let truncateAsync: (path: string, len?: number) => Promise<void> = promisify(fs.truncate);
 export let unlinkAsync: (path: string) => Promise<void> = promisify(fs.unlink);
-export let utimesAsync: (path: string, atime: TimeT, mtime: TimeT) => Promise<void>;
-// export let write = null;
-
+export let utimesAsync: (path: string, atime: TimeT, mtime: TimeT) => Promise<void> = promisify(fs.utimes);
+export interface IWriteAsync {
+    (fd: number, buffer: Buffer, offset: number, length: number, position?: number): Promise<number>;
+    (fd: number, data: any, position?: number, encoding?: string): Promise<number>;
+}
+export let writeAsync: IWriteAsync = promisify(fs.write);
 export let writeFileAsync: (filename: string, data: any,
                             options?: { encoding?: string; mode?: ModeT; flag?: string; }) => Promise<void> = promisify(fs.writeFile);

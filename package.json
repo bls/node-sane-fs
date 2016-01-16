@@ -1,6 +1,6 @@
 {
   "name": "@sane/fs",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Promisified 'fs' API, for typescript.",
   "main": "dist/index.js",
   "typescript": {
