@@ -1,4 +1,3 @@
-
 import * as fs from 'fs';
 export * from 'fs';
 import promisify = require('es6-promisify');
