@@ -1,6 +1,6 @@
 # @sane/fs
 
-Promisified 'fs' API, for typescript.
+Promisified 'fs' API, for TypeScript.
 
 Just import it and use it like the regular 'fs' module.
 
@@ -14,7 +14,8 @@ npm install @sane/fs --save
 Api
 ---
 
-See [src/index.ts](src/index.ts) for a list of promisifed methods.
+If `foo` gives you a callback, `fooAsync` will give you a promise. See [src/index.ts](src/index.ts)
+for a list of promisifed methods.
 
 Example
 -------
@@ -27,6 +28,12 @@ fs.unlinkAsync('/tmp/foo')
         // ...
     });
 ```
+
+
+Compatibility
+-------------
+
+* Requires Node >= v0.12
 
 Release
 -------
