@@ -39,5 +39,17 @@ export interface IWriteAsync {
     (fd: number, data: any, position?: number, encoding?: string): Promise<number>;
 }
 export let writeAsync: IWriteAsync = promisify(fs.write);
-export let writeFileAsync: (filename: string, data: any,
-                            options?: { encoding?: string; mode?: ModeT; flag?: string; }) => Promise<void> = promisify(fs.writeFile);
+export interface IWriteFileAsync {
+    (filename: string, data: any): Promise<void>;
+    (filename: string, data: any, options: { encoding?: string; mode?: number; flag?: string; }): Promise<void>;
+    (filename: string, data: any, options: { encoding?: string; mode?: string; flag?: string; }): Promise<void>;
+
+}
+export let writeFileAsync: IWriteFileAsync = promisify(fs.writeFile);
+export interface IReadFileAsync {
+    (filename: string, encoding: string): Promise<string>;
+    (filename: string, options: { encoding: string; flag?: string; }): Promise<string>;
+    (filename: string, options: { flag?: string; }): Promise<Buffer>;
+    (filename: string): Promise<Buffer>;
+}
+export let readFileAsync: IReadFileAsync = promisify(fs.readFile);
