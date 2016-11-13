@@ -3,6 +3,7 @@
 ## [1.0.3] - 2016-11-13
 ### Fixed
 - Fix signature of readAsync & writeAsync.
+- Target ES5, not ES6 to keep Node 0.12 support.
 
 ## [1.0.2] - 2016-01-25
 ### Fixed
