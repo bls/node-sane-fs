@@ -23,7 +23,7 @@ export let linkAsync: (srcpath: string, dstpath: string) => Promise<void> = prom
 export let lstatAsync: (path: string) => Promise<fs.Stats> = promisify(fs.lstat);
 export let mkdirAsync: (path: string) => Promise<void> = promisify(fs.mkdir);
 export let openAsync: (path: string, flags: string, mode?: ModeT) => Promise<number> = promisify(fs.open);
-export let readAsync: (fd: number, buffer: Buffer, offset: number, length: number, position: number) => Promise<number> = promisify(fs.read);
+export let readAsync: (fd: number, buffer: Buffer, offset: number, length: number, position: number) => Promise<any[]> = promisify(fs.read);
 export let readdirAsync: (path: string) => Promise<string[]> = promisify(fs.readdir);
 export let readlinkAsync: (path: string) => Promise<string> = promisify(fs.readlink);
 export let realpathAsync: (path: string, cache?: { [path: string]: string }) => Promise<string> = promisify(fs.realpath);

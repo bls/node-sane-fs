@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.0.3] - 2016-11-13
+### Fixed
+- Fix signature of readAsync.
+
 ## [1.0.2] - 2016-01-25
 ### Fixed
 - Fix readFileAsync & writeFileAsync.
