@@ -1,5 +1,4 @@
-// import { expect } from 'chai';
-import * as fs from './index';
+let fs = require(./index');
 
 describe('fs', function() {
     describe('unlink', function() {
