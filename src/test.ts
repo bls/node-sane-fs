@@ -1,4 +1,4 @@
-let fs = require('./index');
+var fs = require('./index');
 
 describe('fs', function() {
     describe('unlink', function() {
