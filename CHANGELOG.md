@@ -1,5 +1,9 @@
 # Change Log
 
+## [1.0.4] - 2016-12-8
+### Fixed
+- Clean up some typings as TypeScript 2.1 is a bit more strict.
+
 ## [1.0.3] - 2016-11-13
 ### Fixed
 - Fix signature of readAsync & writeAsync.

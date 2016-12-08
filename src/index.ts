@@ -24,7 +24,7 @@ export let linkAsync: (srcpath: string, dstpath: string) => Promise<void> = prom
 export let lstatAsync: (path: string) => Promise<fs.Stats> = promisify(fs.lstat);
 export let mkdirAsync: (path: string) => Promise<void> = promisify(fs.mkdir);
 export let openAsync: (path: string, flags: string, mode?: ModeT) => Promise<number> = promisify(fs.open);
-export let readAsync: (fd: number, buffer: Buffer, offset: number, length: number, position: number)
+export let readAsync: (fd: number, buffer: Buffer, offset: number, length: number, position: number | null)
 	=> Promise<[number, Buffer]> = promisify(fs.read);
 export let readdirAsync: (path: string) => Promise<string[]> = promisify(fs.readdir);
 export let readlinkAsync: (path: string) => Promise<string> = promisify(fs.readlink);
@@ -37,8 +37,8 @@ export let truncateAsync: (path: string, len?: number) => Promise<void> = promis
 export let unlinkAsync: (path: string) => Promise<void> = promisify(fs.unlink);
 export let utimesAsync: (path: string, atime: TimeT, mtime: TimeT) => Promise<void> = promisify(fs.utimes);
 export interface IWriteAsync {
-    (fd: number, buffer: Buffer, offset: number, length: number, position?: number): Promise<[number, Buffer]>;
-    (fd: number, data: any, position?: number, encoding?: string): Promise<[number, DataT]>;
+    (fd: number, buffer: Buffer, offset: number, length: number, position?: number | null): Promise<[number, Buffer]>;
+    (fd: number, data: any, position?: number | null, encoding?: string): Promise<[number, DataT]>;
 }
 export let writeAsync: IWriteAsync = promisify(fs.write);
 export interface IWriteFileAsync {
